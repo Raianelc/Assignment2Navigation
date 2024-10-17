@@ -15,9 +15,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 
+// This is the LandingPage composable function,
+// it will be the first screen that the user will see when the app is launched.
+
 @Composable
 fun LandingPage(navCont: NavHostController) {
+    //here I have the LandingPage composable function that takes a NavHostController parameter navCont to manage the navigation.
     var userName by rememberSaveable { mutableStateOf("") }
+    // Here I have a mutableState variable called userName to store the value of the username entered by the user in the TextField.
 
     Column(
         Modifier.fillMaxSize(),
@@ -32,6 +37,7 @@ fun LandingPage(navCont: NavHostController) {
             onValueChange = { userName = it },
             label = { Text("UserName") },
         )
+        // Here I have a TextField composable function to get the username from the user and store it in the userName variable.
 
         Button(onClick = {
             navCont.navigate("SecondScreen/" + userName)
@@ -39,6 +45,8 @@ fun LandingPage(navCont: NavHostController) {
             Text(text = "Click here for Second Screen")
         }
     }
+    // The Button composable function will navigate to the SecondScreen composable function when clicked.
+    // The value of the userName variable will be passed as an argument to the SecondScreen composable function.
 
 
 }

@@ -19,6 +19,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Navigation()
+            //Here I'm calling the Navigation composable function in the setContent block to set up the navigation graph for the app.
+            //The first screen still being the LandingPage composable function, as I set up as the start destination.
         }
     }
 }
